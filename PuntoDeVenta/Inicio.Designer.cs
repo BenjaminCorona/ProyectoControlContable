@@ -84,9 +84,9 @@ namespace PuntoDeVenta
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.label1.Location = new System.Drawing.Point(353, 422);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Cargando...";
+            this.label1.Text = "Cargando";
             // 
             // Inicio
             // 
