@@ -1,0 +1,13 @@
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\bin\Debug\PuntoDeVenta.exe.config
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\bin\Debug\PuntoDeVenta.exe
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\bin\Debug\PuntoDeVenta.pdb
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.csproj.AssemblyReference.cache
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.Properties.Resources.resources
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.csproj.GenerateResource.cache
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.csproj.CoreCompileInputs.cache
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.exe
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.pdb
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.Inicio.resources
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.Registro.resources
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.Sesion.resources
+C:\Users\benja\Documents\ITESI-C#\Semestre 2\PuntoDeVenta\PuntoDeVenta\obj\Debug\PuntoDeVenta.Principal.resources
