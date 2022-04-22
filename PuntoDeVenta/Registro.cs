@@ -31,8 +31,9 @@ namespace PuntoDeVenta
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Principal reg = new Principal();
+            MessageBox.Show("Se registró correctamente");
             reg.Show();
         }
     }
