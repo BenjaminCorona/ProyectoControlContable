@@ -32,28 +32,13 @@ namespace PuntoDeVenta
 
         private void BtnIniciar_Click(object sender, EventArgs e)
         {
-            string server = "localhost";
-            string puerto = "3306";
-            string usuario = "Enriqlon";
-            string psswd = "1234";
-            string datos = "";
-            string conn = "server=" + server + "; port=" + puerto + "; user id=" + usuario + "; password=" + psswd + "; database=mydb;";
-            MySqlConnection connection = new MySqlConnection(conn);
-
-            try
-            {
-                connection.Open();
-
-            }
-            catch (MySqlException ex)
-            {
-
-            }
-
+        
+            AbrirBD op = new AbrirBD();
+            op.conectar();
             //inicio de sesion
             string login = "select idadmin,password from admin where idadmin='" + TxtUsuario.Text + "' AND password='" + textBox1.Text + "'";
            
-            MySqlCommand cmd = new MySqlCommand(login, connection);
+            MySqlCommand cmd = new MySqlCommand(login, op.conectar());
             MySqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
