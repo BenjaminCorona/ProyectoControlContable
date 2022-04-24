@@ -19,7 +19,7 @@ namespace PuntoDeVenta
 
         private void LblRegistro_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Sesion reg = new Sesion();
             reg.Show();
         }
@@ -31,9 +31,12 @@ namespace PuntoDeVenta
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
+            AbrirBD op = new AbrirBD();
+            op.conectar();
+            
             this.Close();
             Principal reg = new Principal();
-            MessageBox.Show("Se registró correctamente");
+          //  MessageBox.Show("Se registró correctamente");
             reg.Show();
         }
     }

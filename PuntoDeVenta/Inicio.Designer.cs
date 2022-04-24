@@ -64,6 +64,7 @@ namespace PuntoDeVenta
             this.progressBar1.Size = new System.Drawing.Size(1200, 18);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // panel1
             // 

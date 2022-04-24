@@ -22,6 +22,7 @@ namespace PuntoDeVenta
             try {
                 connection.ConnectionString = conn;
                 connection.Open();
+                MessageBox.Show("Conectado a la base de datos");
             } catch (MySqlException ex) {
                 //MessageBox.Show(ex.ToString());
             }

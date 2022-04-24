@@ -49,3 +49,4 @@ C:\Users\yahir\Source\Repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\
 C:\Users\yahir\Source\Repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.csproj.CopyComplete
 C:\Users\yahir\Source\Repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.exe
 C:\Users\yahir\Source\Repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.pdb
+C:\Users\yahir\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.Venta.resources
