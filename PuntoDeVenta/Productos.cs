@@ -19,10 +19,21 @@ namespace PuntoDeVenta
         public string tipoventa { get; set; }
 
 
-        public void comprar() { }
-        public void vender() { }
-        public void actualizar() { }
-        public void buscarpp() { }
-        public void buscart() { }
+        public string BuscarProductoU()
+        {
+            string seeku = "select * from mydb.producto where idproducto="+idproducto+"";
+            return seeku;
+        }
+        public string BuscarProductoT()
+        {
+            string seekt = "select * from mydb.producto";
+            return seekt;
+        }
+
+        public string ComprarProductoNuevo()
+        {
+            string buyn = "insert into mydb.producto(idproducto,detalleproducto,costo,precioventa,preciomayoreo,existencia,exminima,exmaxima,tipoventa)VALUES('"+idproducto+"','"+detalleproducto+"','"+costo+"','"+precioventa+"','"+preciomayoreo+"','"+existencia+"','"+exminima+"','"+exmaxima+"','"+tipoventa+"')";
+            return buyn;
+        }
     }
 }
