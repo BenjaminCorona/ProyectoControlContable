@@ -22,5 +22,26 @@ namespace PuntoDeVenta
             Venta v = new Venta();
             v.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (button5.Enabled) {
+                button5.Enabled = false;
+                button6.Enabled = false;
+            }
+            else
+            {
+                button5.Enabled = true;
+                button6.Enabled = true;
+            }
+
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Nuevo cnp = new Nuevo();
+            cnp.Show();
+        }
     }
 }
