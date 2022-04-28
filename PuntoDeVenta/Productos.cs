@@ -35,5 +35,11 @@ namespace PuntoDeVenta
             string buyn = "insert into mydb.producto(idproducto,detalleproducto,costo,precioventa,preciomayoreo,existencia,exminima,exmaxima,tipoventa)VALUES('"+idproducto+"','"+detalleproducto+"','"+costo+"','"+precioventa+"','"+preciomayoreo+"','"+existencia+"','"+exminima+"','"+exmaxima+"','"+tipoventa+"')";
             return buyn;
         }
+
+        public string ComprarProductoExistente()
+        {
+            string buye="update mydb.producto set existencia= "+existencia+" where (idproducto="+idproducto+")";
+            return buye;
+        }
     }
 }

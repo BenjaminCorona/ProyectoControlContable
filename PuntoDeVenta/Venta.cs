@@ -16,5 +16,15 @@ namespace PuntoDeVenta
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirBD op = new AbrirBD();
+            op.conectar();
+
+            Productos productos = new Productos();
+            productos.idproducto = Convert.ToInt32(txtCLAVE.Text);
+            productos.BuscarProductoU();
+        }
     }
 }
