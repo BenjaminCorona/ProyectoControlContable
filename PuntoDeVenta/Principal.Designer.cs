@@ -40,68 +40,74 @@ namespace PuntoDeVenta
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightSalmon;
             this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(57, 83);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 131);
+            this.button1.Size = new System.Drawing.Size(160, 131);
             this.button1.TabIndex = 0;
             this.button1.Text = "Vender productos";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.Info;
             this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(211, 83);
+            this.button2.Location = new System.Drawing.Point(241, 83);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 131);
+            this.button2.Size = new System.Drawing.Size(160, 131);
             this.button2.TabIndex = 1;
             this.button2.Text = "Comprar productos";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.MistyRose;
             this.button3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(57, 233);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 131);
+            this.button3.Size = new System.Drawing.Size(160, 131);
             this.button3.TabIndex = 2;
             this.button3.Text = "Consultar productos";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.NavajoWhite;
             this.button4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(57, 386);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 131);
+            this.button4.Size = new System.Drawing.Size(160, 131);
             this.button4.TabIndex = 3;
             this.button4.Text = "Administrar proveedores";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.LightCyan;
             this.button5.Enabled = false;
             this.button5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(366, 83);
+            this.button5.Location = new System.Drawing.Point(426, 83);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 131);
+            this.button5.Size = new System.Drawing.Size(160, 131);
             this.button5.TabIndex = 4;
             this.button5.Text = "Producto existente";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.Color.PaleTurquoise;
             this.button6.Enabled = false;
             this.button6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(523, 83);
+            this.button6.Location = new System.Drawing.Point(612, 83);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(129, 131);
+            this.button6.Size = new System.Drawing.Size(160, 131);
             this.button6.TabIndex = 5;
             this.button6.Text = "Nuevo producto";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // BtnCerrar
