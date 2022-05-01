@@ -50,6 +50,12 @@
   <ItemGroup>
     <Compile Include="AbrirBD.cs" />
     <Compile Include="Admin.cs" />
+    <Compile Include="AdminProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminProv.Designer.cs">
+      <DependentUpon>AdminProv.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevoProducto.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -43,5 +43,12 @@ namespace PuntoDeVenta
             Nuevo cnp = new Nuevo();
             cnp.Show();
         }
+
+
+        private void btnAProv_Click(object sender, EventArgs e)
+        {
+            AdminProv aProv = new AdminProv();
+            aProv.Show();
+        }
     }
 }
