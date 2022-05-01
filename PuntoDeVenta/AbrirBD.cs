@@ -14,7 +14,7 @@ namespace PuntoDeVenta
         MySqlConnection connection = new MySqlConnection();
         static string server = "localhost";
         static string puerto = "3306";
-        static string usuario = "putoc";
+        static string usuario = "Enriqlon";
         static string psswd = "1234";
         string conn = "server=" + server + "; port=" + puerto + "; user id=" + usuario + "; password=" + psswd + "; database=mydb;";
 
