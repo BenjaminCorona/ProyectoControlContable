@@ -43,17 +43,5 @@ namespace PuntoDeVenta
             Nuevo cnp = new Nuevo();
             cnp.Show();
         }
-
-        private void BtnCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-            
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            ComprarExistente existente = new ComprarExistente();
-            existente.Show();
-        }
     }
 }

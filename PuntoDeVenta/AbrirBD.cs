@@ -1,10 +1,11 @@
-﻿using MySql.Data.MySqlClient;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace PuntoDeVenta
 {
@@ -13,7 +14,7 @@ namespace PuntoDeVenta
         MySqlConnection connection = new MySqlConnection();
         static string server = "localhost";
         static string puerto = "3306";
-        static string usuario = "Enriqlon";
+        static string usuario = "putoc";
         static string psswd = "1234";
         string conn = "server=" + server + "; port=" + puerto + "; user id=" + usuario + "; password=" + psswd + "; database=mydb;";
 
