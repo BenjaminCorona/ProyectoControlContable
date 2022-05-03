@@ -34,7 +34,7 @@ namespace PuntoDeVenta
         }
         public string EditarProveedor()
         {
-            string editProv = "update mydb.proveedor set detalleproveedor = " + detalleproveedor + "where idproveedor=" + idproveedor + "";
+            string editProv = "update mydb.proveedor set detalleproveedor = '" + detalleproveedor + "' where idproveedor='" + idproveedor + "'";
             return editProv;
         }
         //UPDATE `mydb`.`proveedor` SET `detalleproveedor` = 'sNike SA. de CV.' WHERE(`idproveedor` = '1');
