@@ -78,3 +78,4 @@ C:\Users\marti\Source\Repos\ProyectoControlContable\PuntoDeVenta\bin\Debug\K4os.
 C:\Users\marti\Source\Repos\ProyectoControlContable\PuntoDeVenta\bin\Debug\MySql.Data.xml
 C:\Users\marti\Source\Repos\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.exe.config
 C:\Users\marti\Source\Repos\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.csproj.CopyComplete
+C:\Users\marti\source\repos\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.AdminProv.resources

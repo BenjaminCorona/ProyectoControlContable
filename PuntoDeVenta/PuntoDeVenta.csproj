@@ -69,6 +69,7 @@
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos.cs" />
+    <Compile Include="Proveedores.cs" />
     <Compile Include="Sesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,9 @@
     <Compile Include="Venta.Designer.cs">
       <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminProv.resx">
+      <DependentUpon>AdminProv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoProducto.resx">
       <DependentUpon>NuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
