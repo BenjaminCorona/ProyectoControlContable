@@ -37,6 +37,10 @@ namespace PuntoDeVenta
             {
                 MessageBox.Show("Errox");
             }
+            btnDelProv.Enabled = false;
+            btnAddProv.Enabled = false;
+            btnEditProv.Enabled = false;
+
         }
 
 
@@ -47,6 +51,8 @@ namespace PuntoDeVenta
             CargarTabla();
             
         }
+
+        
 
         
         private void btnAddProv_Click(object sender, EventArgs e)
@@ -122,6 +128,7 @@ namespace PuntoDeVenta
                 }
                 txtID.Clear();
                 txtNOM.Clear();
+
             }
             else
             {
@@ -144,6 +151,11 @@ namespace PuntoDeVenta
                 btnAddProv.Enabled = false;
                 btnDelProv.Enabled = false;
             }
+        }
+
+        private void txtNOM_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

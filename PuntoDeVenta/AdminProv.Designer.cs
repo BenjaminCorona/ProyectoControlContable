@@ -95,6 +95,7 @@
             this.txtNOM.Size = new System.Drawing.Size(289, 35);
             this.txtNOM.TabIndex = 5;
             this.txtNOM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNOM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNOM_KeyDown);
             // 
             // btnAddProv
             // 
