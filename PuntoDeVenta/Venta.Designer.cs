@@ -91,7 +91,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(13, 426);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(904, 338);
+            this.panel2.Size = new System.Drawing.Size(904, 268);
             this.panel2.TabIndex = 1;
             // 
             // button2
@@ -260,7 +260,7 @@
             this.panel3.Controls.Add(this.button3);
             this.panel3.Location = new System.Drawing.Point(934, 13);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(290, 751);
+            this.panel3.Size = new System.Drawing.Size(290, 681);
             this.panel3.TabIndex = 2;
             // 
             // button3
@@ -269,7 +269,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.AliceBlue;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(64, 624);
+            this.button3.Location = new System.Drawing.Point(61, 624);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 41);
             this.button3.TabIndex = 16;
@@ -278,6 +278,7 @@
             // 
             // dataGrid
             // 
+            this.dataGrid.AllowDrop = true;
             this.dataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -288,6 +289,7 @@
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Location = new System.Drawing.Point(0, -1);
             this.dataGrid.Name = "dataGrid";
+            this.dataGrid.ReadOnly = true;
             this.dataGrid.RowTemplate.Height = 28;
             this.dataGrid.Size = new System.Drawing.Size(904, 393);
             this.dataGrid.TabIndex = 0;

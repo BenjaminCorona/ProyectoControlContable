@@ -20,10 +20,15 @@ namespace PuntoDeVenta
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
             AbrirBD op = new AbrirBD();
-           
             Productos productos = new Productos();
-            productos.idproducto = Convert.ToInt32(txtCLAVE.Text);
+            if (txtCLAVE.Text.Equals("")) {
+                MessageBox.Show("DEBE INTRODUCIR UNA CLAVE ANTES DE BUSCAR", "ERROR", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            } else {
+                productos.idproducto = Convert.ToInt32(txtCLAVE.Text);
+            }
             productos.BuscarProductoU();
             MySqlCommand cmd = new MySqlCommand(productos.BuscarProductoU(), op.conectar());
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -39,6 +44,7 @@ namespace PuntoDeVenta
                 DataTable tabla = new DataTable();
                 adapter.Fill(tabla);
                 dataGrid.DataSource = tabla;
+                
             }
             else
             {
