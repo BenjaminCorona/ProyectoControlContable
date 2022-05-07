@@ -47,5 +47,12 @@ namespace PuntoDeVenta
             //`preciomayoreo` = '1', `existencia` = '11', 
             //`exminima` = '9', `exmaxima` = '3', `tipoventa` = 'uni' WHERE(`idproducto` = '5');
         }
+
+        public string TablaCarrito()
+        {
+            string carro="";
+            return carro;
+        }
+
     }
 }

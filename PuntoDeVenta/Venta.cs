@@ -54,7 +54,8 @@ namespace PuntoDeVenta
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGrid.ClearSelection();
+            dataGrid.ClearSelection(); 
+            
       
         }
     }
