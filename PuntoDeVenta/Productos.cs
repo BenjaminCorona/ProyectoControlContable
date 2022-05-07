@@ -8,6 +8,14 @@ namespace PuntoDeVenta
 {
     class Productos
     {
+        //parametros para tabla temporal del carrito
+        public int cantidad { get; set; } 
+        public double preciou { get; set; }
+        public double preciot { get; set; }
+        public double descuento { get; set; }
+        public string fecha { get; set; }
+
+
         public int idproducto { get; set; }
         public string detalleproducto { get; set; }
         public double costo { get; set; }
@@ -50,8 +58,28 @@ namespace PuntoDeVenta
 
         public string TablaCarrito()
         {
-            string carro="";
+            string carro= "create temporary table mydb.carrito("
+                + "idproducto int not null,"
+                + "detalleproducto varchar(450) not null,"
+                + "cantidad int not null,"
+                + "preciou double not null,"
+                + "descuento double not null,"
+                + "preciot double not null,"
+                + "fecha varchar(45)"
+                +")";
             return carro;
+        }
+
+        public string EliminarCarrito()
+        {
+            string eliminarcarro = "drop temporary table mydb.carrito";
+            return eliminarcarro;
+        }
+
+        public string AgregarCarrito()
+        {
+            string addcarro= "insert into mydb.carrito (idproducto, detalleproducto, cantidad, preciou, descuento, preciot, fecha)values ('"+idproducto+"','"+detalleproducto+"','"+cantidad+"','"+preciou+"','"+descuento+"','"+preciot+"','"+fecha+"');";
+            return addcarro;
         }
 
     }

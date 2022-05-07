@@ -30,16 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Venta));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPRECIOT = new System.Windows.Forms.TextBox();
+            this.txtPRECIOU = new System.Windows.Forms.TextBox();
+            this.txtDESCUENTO = new System.Windows.Forms.TextBox();
+            this.txtCANTIDAD = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,11 +50,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,6 +68,24 @@
             this.panel1.Size = new System.Drawing.Size(904, 392);
             this.panel1.TabIndex = 0;
             // 
+            // dataGrid
+            // 
+            this.dataGrid.AllowDrop = true;
+            this.dataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(0, -1);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.ReadOnly = true;
+            this.dataGrid.RowTemplate.Height = 28;
+            this.dataGrid.Size = new System.Drawing.Size(904, 393);
+            this.dataGrid.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -78,10 +96,10 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtPRECIOT);
+            this.panel2.Controls.Add(this.txtPRECIOU);
+            this.panel2.Controls.Add(this.txtDESCUENTO);
+            this.panel2.Controls.Add(this.txtCANTIDAD);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -151,37 +169,37 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "CANTIDAD:";
             // 
-            // textBox5
+            // txtPRECIOT
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(726, 71);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(144, 26);
-            this.textBox5.TabIndex = 10;
+            this.txtPRECIOT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPRECIOT.Location = new System.Drawing.Point(726, 71);
+            this.txtPRECIOT.Name = "txtPRECIOT";
+            this.txtPRECIOT.Size = new System.Drawing.Size(144, 26);
+            this.txtPRECIOT.TabIndex = 10;
             // 
-            // textBox4
+            // txtPRECIOU
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(726, 24);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(144, 26);
-            this.textBox4.TabIndex = 9;
+            this.txtPRECIOU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPRECIOU.Location = new System.Drawing.Point(726, 24);
+            this.txtPRECIOU.Name = "txtPRECIOU";
+            this.txtPRECIOU.Size = new System.Drawing.Size(144, 26);
+            this.txtPRECIOU.TabIndex = 9;
             // 
-            // textBox3
+            // txtDESCUENTO
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(444, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(144, 26);
-            this.textBox3.TabIndex = 8;
+            this.txtDESCUENTO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDESCUENTO.Location = new System.Drawing.Point(444, 71);
+            this.txtDESCUENTO.Name = "txtDESCUENTO";
+            this.txtDESCUENTO.Size = new System.Drawing.Size(144, 26);
+            this.txtDESCUENTO.TabIndex = 8;
             // 
-            // textBox2
+            // txtCANTIDAD
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(444, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 26);
-            this.textBox2.TabIndex = 7;
+            this.txtCANTIDAD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCANTIDAD.Location = new System.Drawing.Point(444, 24);
+            this.txtCANTIDAD.Name = "txtCANTIDAD";
+            this.txtCANTIDAD.Size = new System.Drawing.Size(144, 26);
+            this.txtCANTIDAD.TabIndex = 7;
             // 
             // label5
             // 
@@ -276,24 +294,6 @@
             this.button3.Text = "V E N D E R";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // dataGrid
-            // 
-            this.dataGrid.AllowDrop = true;
-            this.dataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(0, -1);
-            this.dataGrid.Name = "dataGrid";
-            this.dataGrid.ReadOnly = true;
-            this.dataGrid.RowTemplate.Height = 28;
-            this.dataGrid.Size = new System.Drawing.Size(904, 393);
-            this.dataGrid.TabIndex = 0;
-            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -306,10 +306,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,10 +326,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPRECIOT;
+        private System.Windows.Forms.TextBox txtPRECIOU;
+        private System.Windows.Forms.TextBox txtDESCUENTO;
+        private System.Windows.Forms.TextBox txtCANTIDAD;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
