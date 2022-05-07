@@ -35,5 +35,17 @@ namespace PuntoDeVenta
             string buyn = "insert into mydb.producto(idproducto,detalleproducto,costo,precioventa,preciomayoreo,existencia,exminima,exmaxima,tipoventa)VALUES('"+idproducto+"','"+detalleproducto+"','"+costo+"','"+precioventa+"','"+preciomayoreo+"','"+existencia+"','"+exminima+"','"+exmaxima+"','"+tipoventa+"')";
             return buyn;
         }
+
+        public string EditarProducto()
+        {
+            string editProd = "update mydb.producto set detalleproducto = '" + detalleproducto + "', costo = '" + costo + "', " +
+                "precioventa = '" + precioventa + "', preciomayore = '" + preciomayoreo + "', " +
+                "existencia = '" + existencia + "', exminima = '" + exminima + "', " +
+                "exmaxima = '" + exmaxima + "', tipoventa = '" + tipoventa + "' where idproducto='" + idproducto + "'";
+            return editProd;
+            //UPDATE `mydb`.`producto` SET `detalleproducto` = 'Teniz', `costo` = '7', `precioventa` = '36', 
+            //`preciomayoreo` = '1', `existencia` = '11', 
+            //`exminima` = '9', `exmaxima` = '3', `tipoventa` = 'uni' WHERE(`idproducto` = '5');
+        }
     }
 }
