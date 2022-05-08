@@ -65,7 +65,7 @@ namespace PuntoDeVenta
                 + "preciou double not null,"
                 + "descuento double not null,"
                 + "preciot double not null,"
-                + "fecha varchar(45)"
+                + "fecha varchar(45) not null"
                 +")";
             return carro;
         }

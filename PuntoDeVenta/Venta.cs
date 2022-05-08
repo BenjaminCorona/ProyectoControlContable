@@ -44,7 +44,25 @@ namespace PuntoDeVenta
                 DataTable tabla = new DataTable();
                 adapter.Fill(tabla);
                 dataGrid.DataSource = tabla;
+
+
+                //va a eliminar una tabla temporal si es que existe una creada
+
+
+                MySqlCommand cmd2 = new MySqlCommand(productos.EliminarCarrito(), op.conectar());
+                MySqlDataReader reader2 = cmd2.ExecuteReader();
+                if (reader2.Read()) {
+                    reader2.Close();
+                }
+                else
+                {
+                    //va a crear la tabla temporal si encuentra el producto y no existen carritos
+
+                    MySqlCommand cmd3 = new MySqlCommand(productos.BuscarProductoU(), op.conectar());
+                    MySqlDataReader reader3 = cmd3.ExecuteReader();
+                }
                 
+
             }
             else
             {
