@@ -47,7 +47,7 @@ namespace PuntoDeVenta
         public string EditarProducto()
         {
             string editProd = "update mydb.producto set detalleproducto = '" + detalleproducto + "', costo = '" + costo + "', " +
-                "precioventa = '" + precioventa + "', preciomayore = '" + preciomayoreo + "', " +
+                "precioventa = '" + precioventa + "', preciomayoreo = '" + preciomayoreo + "', " +
                 "existencia = '" + existencia + "', exminima = '" + exminima + "', " +
                 "exmaxima = '" + exmaxima + "', tipoventa = '" + tipoventa + "' where idproducto='" + idproducto + "'";
             return editProd;
