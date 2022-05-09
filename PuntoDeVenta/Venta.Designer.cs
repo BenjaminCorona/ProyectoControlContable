@@ -42,7 +42,6 @@
             this.txtDESCUENTO = new System.Windows.Forms.TextBox();
             this.txtCANTIDAD = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -50,10 +49,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtFECHA = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dataGrid2 = new System.Windows.Forms.DataGridView();
+            this.lblDETALLE = new System.Windows.Forms.Label();
+            this.lblPRECIOU = new System.Windows.Forms.Label();
+            this.lblPRECIOM = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,6 +97,10 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel2.Controls.Add(this.lblPRECIOM);
+            this.panel2.Controls.Add(this.lblPRECIOU);
+            this.panel2.Controls.Add(this.lblDETALLE);
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -101,7 +111,6 @@
             this.panel2.Controls.Add(this.txtDESCUENTO);
             this.panel2.Controls.Add(this.txtCANTIDAD);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.button1);
@@ -116,6 +125,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.AliceBlue;
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(703, 211);
             this.button2.Name = "button2";
@@ -174,6 +184,7 @@
             this.txtPRECIOT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPRECIOT.Location = new System.Drawing.Point(726, 71);
             this.txtPRECIOT.Name = "txtPRECIOT";
+            this.txtPRECIOT.ReadOnly = true;
             this.txtPRECIOT.Size = new System.Drawing.Size(144, 26);
             this.txtPRECIOT.TabIndex = 10;
             // 
@@ -205,31 +216,21 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 195);
+            this.label5.Location = new System.Drawing.Point(27, 211);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 25);
+            this.label5.Size = new System.Drawing.Size(200, 25);
             this.label5.TabIndex = 6;
-            this.label5.Text = "PRECIO MAYOREO";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 232);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(319, 25);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "EXISTENCIA EN EL INVENTARIO";
+            this.label5.Text = "PRECIO MAYOREO:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 159);
+            this.label3.Location = new System.Drawing.Point(27, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 25);
+            this.label3.Size = new System.Drawing.Size(192, 25);
             this.label3.TabIndex = 4;
-            this.label3.Text = "PRECIO UNITARIO";
+            this.label3.Text = "PRECIO UNITARIO:";
             // 
             // label2
             // 
@@ -237,9 +238,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(27, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 25);
+            this.label2.Size = new System.Drawing.Size(107, 25);
             this.label2.TabIndex = 3;
-            this.label2.Text = "DETALLE";
+            this.label2.Text = "DETALLE:";
             // 
             // button1
             // 
@@ -275,6 +276,8 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel3.Controls.Add(this.dataGrid2);
+            this.panel3.Controls.Add(this.txtFECHA);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Location = new System.Drawing.Point(934, 13);
             this.panel3.Name = "panel3";
@@ -294,6 +297,79 @@
             this.button3.Text = "V E N D E R";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // txtFECHA
+            // 
+            this.txtFECHA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFECHA.Location = new System.Drawing.Point(17, 12);
+            this.txtFECHA.Name = "txtFECHA";
+            this.txtFECHA.Size = new System.Drawing.Size(256, 26);
+            this.txtFECHA.TabIndex = 16;
+            this.txtFECHA.Tag = "";
+            this.txtFECHA.Text = "FECHA: DD-MM-AAAA";
+            this.txtFECHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.AliceBlue;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(703, 159);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(164, 41);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "O P E R A R";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // dataGrid2
+            // 
+            this.dataGrid2.AllowDrop = true;
+            this.dataGrid2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGrid2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGrid2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGrid2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid2.Location = new System.Drawing.Point(17, 57);
+            this.dataGrid2.Name = "dataGrid2";
+            this.dataGrid2.ReadOnly = true;
+            this.dataGrid2.RowTemplate.Height = 28;
+            this.dataGrid2.Size = new System.Drawing.Size(256, 556);
+            this.dataGrid2.TabIndex = 1;
+            // 
+            // lblDETALLE
+            // 
+            this.lblDETALLE.AutoSize = true;
+            this.lblDETALLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDETALLE.Location = new System.Drawing.Point(140, 122);
+            this.lblDETALLE.Name = "lblDETALLE";
+            this.lblDETALLE.Size = new System.Drawing.Size(26, 25);
+            this.lblDETALLE.TabIndex = 17;
+            this.lblDETALLE.Text = "\"\"";
+            // 
+            // lblPRECIOU
+            // 
+            this.lblPRECIOU.AutoSize = true;
+            this.lblPRECIOU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPRECIOU.Location = new System.Drawing.Point(238, 167);
+            this.lblPRECIOU.Name = "lblPRECIOU";
+            this.lblPRECIOU.Size = new System.Drawing.Size(50, 25);
+            this.lblPRECIOU.TabIndex = 18;
+            this.lblPRECIOU.Text = "0.00";
+            // 
+            // lblPRECIOM
+            // 
+            this.lblPRECIOM.AutoSize = true;
+            this.lblPRECIOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPRECIOM.Location = new System.Drawing.Point(238, 211);
+            this.lblPRECIOM.Name = "lblPRECIOM";
+            this.lblPRECIOM.Size = new System.Drawing.Size(50, 25);
+            this.lblPRECIOM.TabIndex = 19;
+            this.lblPRECIOM.Text = "0.00";
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -310,6 +386,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,11 +409,16 @@
         private System.Windows.Forms.TextBox txtDESCUENTO;
         private System.Windows.Forms.TextBox txtCANTIDAD;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.TextBox txtFECHA;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dataGrid2;
+        private System.Windows.Forms.Label lblDETALLE;
+        private System.Windows.Forms.Label lblPRECIOM;
+        private System.Windows.Forms.Label lblPRECIOU;
     }
 }
