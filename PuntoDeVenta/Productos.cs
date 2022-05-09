@@ -8,7 +8,7 @@ namespace PuntoDeVenta
 {
     class Productos
     {
-        //parametros para tabla temporal del carrito
+        //parametros para operaciones de venta
         public int cantidad { get; set; } 
         public double preciou { get; set; }
         public double preciot { get; set; }
@@ -56,31 +56,37 @@ namespace PuntoDeVenta
             //`exminima` = '9', `exmaxima` = '3', `tipoventa` = 'uni' WHERE(`idproducto` = '5');
         }
 
-        public string TablaCarrito()
-        {
-            string carro= "create temporary table mydb.carrito("
-                + "idproducto int not null,"
-                + "detalleproducto varchar(450) not null,"
-                + "cantidad int not null,"
-                + "preciou double not null,"
-                + "descuento double not null,"
-                + "preciot double not null,"
-                + "fecha varchar(45) not null"
-                +")";
-            return carro;
-        }
+        public string ActualizarExistenciaInventario()
+         {
+             string editex = "update mydb.producto set existencia=existencia-'"+cantidad+"' where idproducto='"+idproducto+"'";
+             return editex;
+         }
 
-        public string EliminarCarrito()
+
+        public string CrearCarrito()
         {
-            string eliminarcarro = "drop temporary table mydb.carrito";
-            return eliminarcarro;
+            string creacar = "create temporary table if not exists mydb.carrito(idproducto int not null,detalleproducto varchar(450) not null,cantidad int not null,preciou double not null,descuento double not null,preciot double not null,fecha varchar(45)) ";
+            return creacar;
         }
 
         public string AgregarCarrito()
         {
-            string addcarro= "insert into mydb.carrito (idproducto, detalleproducto, cantidad, preciou, descuento, preciot, fecha)values ('"+idproducto+"','"+detalleproducto+"','"+cantidad+"','"+preciou+"','"+descuento+"','"+preciot+"','"+fecha+"');";
-            return addcarro;
+            string addcar = "insert into mydb.carrito (idproducto, detalleproducto, cantidad, preciou, descuento, preciot, fecha)values ('"+idproducto+"','"+detalleproducto+"','"+cantidad+"','"+preciou+"','"+descuento+"','"+preciot+"','"+fecha+"')";
+            return addcar;
         }
 
+
+        public string AgregarDetalleVenta()
+        {
+            string adddetail = "insert into mydb.detalleventa (idproducto, detalleproducto, cantidad, preciou, descuento, preciot, fecha)values ('" + idproducto + "','" + detalleproducto + "','" + cantidad + "','" + preciou + "','" + descuento + "','" + preciot + "','" + fecha + "');";
+            return adddetail;
+        }
+
+
+        public string VerCarrito()
+        {
+            string seecar = "select * from mydb.carrito"; 
+            return seecar;
+        }
     }
 }
