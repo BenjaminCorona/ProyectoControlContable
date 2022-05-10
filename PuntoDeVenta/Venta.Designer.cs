@@ -32,6 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPRECIOM = new System.Windows.Forms.Label();
+            this.lblPRECIOU = new System.Windows.Forms.Label();
+            this.lblDETALLE = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,13 +52,9 @@
             this.txtCLAVE = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtFECHA = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataGrid2 = new System.Windows.Forms.DataGridView();
-            this.lblDETALLE = new System.Windows.Forms.Label();
-            this.lblPRECIOU = new System.Windows.Forms.Label();
-            this.lblPRECIOM = new System.Windows.Forms.Label();
+            this.txtFECHA = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.panel2.SuspendLayout();
@@ -120,6 +120,49 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(904, 268);
             this.panel2.TabIndex = 1;
+            // 
+            // lblPRECIOM
+            // 
+            this.lblPRECIOM.AutoSize = true;
+            this.lblPRECIOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPRECIOM.Location = new System.Drawing.Point(238, 211);
+            this.lblPRECIOM.Name = "lblPRECIOM";
+            this.lblPRECIOM.Size = new System.Drawing.Size(50, 25);
+            this.lblPRECIOM.TabIndex = 19;
+            this.lblPRECIOM.Text = "0.00";
+            // 
+            // lblPRECIOU
+            // 
+            this.lblPRECIOU.AutoSize = true;
+            this.lblPRECIOU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPRECIOU.Location = new System.Drawing.Point(238, 167);
+            this.lblPRECIOU.Name = "lblPRECIOU";
+            this.lblPRECIOU.Size = new System.Drawing.Size(50, 25);
+            this.lblPRECIOU.TabIndex = 18;
+            this.lblPRECIOU.Text = "0.00";
+            // 
+            // lblDETALLE
+            // 
+            this.lblDETALLE.AutoSize = true;
+            this.lblDETALLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDETALLE.Location = new System.Drawing.Point(140, 122);
+            this.lblDETALLE.Name = "lblDETALLE";
+            this.lblDETALLE.Size = new System.Drawing.Size(26, 25);
+            this.lblDETALLE.TabIndex = 17;
+            this.lblDETALLE.Text = "\"\"";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.AliceBlue;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(703, 159);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(164, 41);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "O P E R A R";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -284,44 +327,6 @@
             this.panel3.Size = new System.Drawing.Size(290, 681);
             this.panel3.TabIndex = 2;
             // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.AliceBlue;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(61, 624);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(164, 41);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "V E N D E R";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // txtFECHA
-            // 
-            this.txtFECHA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFECHA.Location = new System.Drawing.Point(17, 12);
-            this.txtFECHA.Name = "txtFECHA";
-            this.txtFECHA.Size = new System.Drawing.Size(256, 26);
-            this.txtFECHA.TabIndex = 16;
-            this.txtFECHA.Tag = "";
-            this.txtFECHA.Text = "FECHA: DD-MM-AAAA";
-            this.txtFECHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.AliceBlue;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(703, 159);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 41);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "O P E R A R";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // dataGrid2
             // 
             this.dataGrid2.AllowDrop = true;
@@ -340,35 +345,30 @@
             this.dataGrid2.Size = new System.Drawing.Size(256, 556);
             this.dataGrid2.TabIndex = 1;
             // 
-            // lblDETALLE
+            // txtFECHA
             // 
-            this.lblDETALLE.AutoSize = true;
-            this.lblDETALLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDETALLE.Location = new System.Drawing.Point(140, 122);
-            this.lblDETALLE.Name = "lblDETALLE";
-            this.lblDETALLE.Size = new System.Drawing.Size(26, 25);
-            this.lblDETALLE.TabIndex = 17;
-            this.lblDETALLE.Text = "\"\"";
+            this.txtFECHA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFECHA.Location = new System.Drawing.Point(17, 12);
+            this.txtFECHA.Name = "txtFECHA";
+            this.txtFECHA.Size = new System.Drawing.Size(256, 26);
+            this.txtFECHA.TabIndex = 16;
+            this.txtFECHA.Tag = "";
+            this.txtFECHA.Text = "FECHA: DD-MM-AAAA";
+            this.txtFECHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblPRECIOU
+            // button3
             // 
-            this.lblPRECIOU.AutoSize = true;
-            this.lblPRECIOU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPRECIOU.Location = new System.Drawing.Point(238, 167);
-            this.lblPRECIOU.Name = "lblPRECIOU";
-            this.lblPRECIOU.Size = new System.Drawing.Size(50, 25);
-            this.lblPRECIOU.TabIndex = 18;
-            this.lblPRECIOU.Text = "0.00";
-            // 
-            // lblPRECIOM
-            // 
-            this.lblPRECIOM.AutoSize = true;
-            this.lblPRECIOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPRECIOM.Location = new System.Drawing.Point(238, 211);
-            this.lblPRECIOM.Name = "lblPRECIOM";
-            this.lblPRECIOM.Size = new System.Drawing.Size(50, 25);
-            this.lblPRECIOM.TabIndex = 19;
-            this.lblPRECIOM.Text = "0.00";
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.AliceBlue;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(61, 624);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(164, 41);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "V E N D E R";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Venta
             // 

@@ -18,6 +18,9 @@ namespace PuntoDeVenta
         static string psswd = "1234";
         string conn = "server=" + server + "; port=" + puerto + "; user id=" + usuario + "; password=" + psswd + "; database=mydb;";
 
+        
+
+
         public MySqlConnection conectar()
         {
             try {
@@ -30,6 +33,5 @@ namespace PuntoDeVenta
             return connection;
         }        
        
-
     }
 }

@@ -65,7 +65,7 @@ namespace PuntoDeVenta
 
         public string CrearCarrito()
         {
-            string creacar = "create temporary table if not exists mydb.carrito(idproducto int not null,detalleproducto varchar(450) not null,cantidad int not null,preciou double not null,descuento double not null,preciot double not null,fecha varchar(45)) ";
+            string creacar = "create temporary table mydb.carrito(idproducto int not null,detalleproducto varchar(450) not null,cantidad int not null,preciou double not null,descuento double not null,preciot double not null,fecha varchar(45)) ";
             return creacar;
         }
 
