@@ -354,7 +354,7 @@
             this.txtFECHA.Size = new System.Drawing.Size(256, 26);
             this.txtFECHA.TabIndex = 16;
             this.txtFECHA.Tag = "";
-            this.txtFECHA.Text = "FECHA: DD-MM-AAAA";
+            this.txtFECHA.Text = "DD-MM-AAAA";
             this.txtFECHA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button3
@@ -369,6 +369,7 @@
             this.button3.TabIndex = 16;
             this.button3.Text = "V E N D E R";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Venta
             // 

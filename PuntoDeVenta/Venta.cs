@@ -13,7 +13,7 @@ namespace PuntoDeVenta
 {
     public partial class Venta : Form
     {
-        bool carrito = false;
+        bool carrito;
         public Venta()
         {
             InitializeComponent();
@@ -118,7 +118,6 @@ namespace PuntoDeVenta
             double descuento = Convert.ToDouble(txtDESCUENTO.Text);
             double precio = 0;
             double preciot = 0;
-            //BOTON PARA AGREGAR AL CARRITO
             AbrirBD op = new AbrirBD();
             Productos productos = new Productos();
             //Busca de nuevo el producto:C
@@ -142,74 +141,113 @@ namespace PuntoDeVenta
                 MessageBox.Show("antes de crear el carrito, no busca el producto");
             }
 
-            //CREAMOS EL CARRITO
-            Productos productos2 = new Productos();
-            MySqlCommand cmd2 = new MySqlCommand("drop table if exists mydb.carrito;", op.conectar());
-            MySqlCommand cmd3 = new MySqlCommand(productos.CrearCarrito(), op.conectar());
+            //buscamos el carrito
 
-            if(carrito == false)
+            try
             {
+                MySqlCommand cmd4 = new MySqlCommand(productos.BuscarCarrito(), op.conectar());
+                cmd4.ExecuteNonQuery();
+                if (cmd4.ExecuteNonQuery()!=0)
+                {
+                    carrito = true;
+                    cmd4.Dispose();
+                    MessageBox.Show("Ya existe el carrito");
+                    productos.idproducto = Convert.ToInt32(txtCLAVE.Text);
+                    productos.preciou = precio;
+                    productos.detalleproducto = lblDETALLE.Text;
+                    productos.preciot = preciot;
+                    productos.cantidad = cantidad;
+                    productos.fecha = txtFECHA.Text;
+                    productos.descuento = Convert.ToDouble(txtDESCUENTO.Text);
+
+                    MySqlCommand cmd5 = new MySqlCommand(productos.AgregarCarrito(), op.conectar());
+                    MySqlDataReader reader3 = cmd5.ExecuteReader();
+
+                    if (reader3.Read())
+                    {
+                        MessageBox.Show("Se agregó al carrito:)");
+
+
+                    }
+                    cmd5.Dispose();
+                    reader3.Close();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    MySqlCommand seleccionar = new MySqlCommand();
+                    seleccionar.Connection = op.conectar();
+                    seleccionar.CommandText = productos.VerCarrito();
+                    adapter.SelectCommand = seleccionar;
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    dataGrid2.DataSource = tabla;
+
+
+                }
+            }
+            catch (MySqlException ex) {
+
+
+
+                carrito = false;
+              
+                MessageBox.Show("Aún no existe el carrito");
+                Productos productos2 = new Productos();
+                MySqlCommand cmd2 = new MySqlCommand("drop table if exists mydb.carrito;", op.conectar());
+                MySqlCommand cmd3 = new MySqlCommand(productos.CrearCarrito(), op.conectar());
+
+
                 if (cmd2.ExecuteNonQuery() == 0 && cmd3.ExecuteNonQuery() == 0)
                 {
                     MessageBox.Show("Se creo la tabla");
+                    productos.idproducto = Convert.ToInt32(txtCLAVE.Text);
+                    productos.preciou = precio;
+                    productos.detalleproducto = lblDETALLE.Text;
+                    productos.preciot = preciot;
+                    productos.cantidad = cantidad;
+                    productos.fecha = txtFECHA.Text;
+                    productos.descuento = Convert.ToDouble(txtDESCUENTO.Text);
+
+
+                    cmd2.Dispose();
+                    cmd3.Dispose();
+
+                    MySqlCommand cmd5 = new MySqlCommand(productos.AgregarCarrito(), op.conectar());
+                    MySqlDataReader reader3 = cmd5.ExecuteReader();
+
+                    if (reader3.Read())
+                    {
+                        MessageBox.Show("Se agregó al carrito:)");
+
+
+                    }
+                    cmd5.Dispose();
+                    reader3.Close();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    MySqlCommand seleccionar = new MySqlCommand();
+                    seleccionar.Connection = op.conectar();
+                    seleccionar.CommandText = productos.VerCarrito();
+                    adapter.SelectCommand = seleccionar;
+                    DataTable tabla = new DataTable();
+                    adapter.Fill(tabla);
+                    dataGrid2.DataSource = tabla;
                 }
                 else
                 {
                     MessageBox.Show("No se creo la tabla");
                 }
-                productos.idproducto = Convert.ToInt32(txtCLAVE.Text);
-                productos.preciou = precio;
-                productos.detalleproducto = lblDETALLE.Text;
-                productos.preciot = preciot;
-                productos.cantidad = cantidad;
-                productos.fecha = txtFECHA.Text;
-                productos.descuento = Convert.ToDouble(txtDESCUENTO.Text);
 
-                MySqlCommand cmd5 = new MySqlCommand(productos.AgregarCarrito(), op.conectar());
-                MySqlDataReader reader3 = cmd5.ExecuteReader();
-
-                if (reader3.Read())
-                {
-                    MessageBox.Show("Se agregó al carrito:)");
-                    reader3.Close();
-                }
-                cmd5.Dispose();
-                reader3.Close();
-            }
-            else
-            {
-                productos.idproducto = Convert.ToInt32(txtCLAVE.Text);
-                productos.preciou = precio;
-                productos.detalleproducto = lblDETALLE.Text;
-                productos.preciot = preciot;
-                productos.cantidad = cantidad;
-                productos.fecha = txtFECHA.Text;
-                productos.descuento = Convert.ToDouble(txtDESCUENTO.Text);
-
-                MySqlCommand cmd5 = new MySqlCommand(productos.AgregarCarrito(), op.conectar());
-                MySqlDataReader reader3 = cmd5.ExecuteReader();
-
-                if (reader3.Read())
-                {
-                    MessageBox.Show("Se agregó al carrito:)");
-                    reader3.Close();
-                }
-                cmd5.Dispose();
-                reader3.Close();
             }
             
-            cmd2.Dispose();
-            cmd3.Dispose();
+            
             
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand seleccionar = new MySqlCommand();
-            seleccionar.Connection = op.conectar();
-            seleccionar.CommandText = productos.VerCarrito();
-            adapter.SelectCommand = seleccionar;
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            dataGrid2.DataSource = tabla;
+            //MySqlDataAdapter adapter = new MySqlDataAdapter();
+            //MySqlCommand seleccionar = new MySqlCommand();
+            //seleccionar.Connection = op.conectar();
+            //seleccionar.CommandText = productos.VerCarrito();
+            //adapter.SelectCommand = seleccionar;
+            //DataTable tabla = new DataTable();
+            //adapter.Fill(tabla);
+            //dataGrid2.DataSource = tabla;
 
             if (button4.Enabled == false)
             {
@@ -228,6 +266,30 @@ namespace PuntoDeVenta
             lblDETALLE.Text = "";
             lblPRECIOM.Text = "0.00";
             lblPRECIOU.Text = "0.00";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Productos p = new Productos();
+            AbrirBD op = new AbrirBD();
+            MySqlCommand cmd = new MySqlCommand(p.AgregarDetalleVenta(),op.conectar());
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                reader.Close();
+                MessageBox.Show("Vendido correctamente");
+
+                MySqlCommand cmd2 = new MySqlCommand(p.EliminarCarrito(), op.conectar());
+                MySqlDataReader reader2 = cmd2.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    MessageBox.Show("Carrito eliminado");
+                }
+            }
+
+
         }
     }
 

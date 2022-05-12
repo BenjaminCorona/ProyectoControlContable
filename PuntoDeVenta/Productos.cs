@@ -65,7 +65,7 @@ namespace PuntoDeVenta
 
         public string CrearCarrito()
         {
-            string creacar = "create temporary table mydb.carrito(idproducto int not null,detalleproducto varchar(450) not null,cantidad int not null,preciou double not null,descuento double not null,preciot double not null,fecha varchar(45)) ";
+            string creacar = "create table mydb.carrito(idproducto int not null,detalleproducto varchar(450) not null,cantidad int not null,preciou double not null,descuento double not null,preciot double not null,fecha varchar(45)) ";
             return creacar;
         }
 
@@ -78,7 +78,7 @@ namespace PuntoDeVenta
 
         public string AgregarDetalleVenta()
         {
-            string adddetail = "insert into mydb.detalleventa (idproducto, detalleproducto, cantidad, preciou, descuento, preciot, fecha)values ('" + idproducto + "','" + detalleproducto + "','" + cantidad + "','" + preciou + "','" + descuento + "','" + preciot + "','" + fecha + "');";
+            string adddetail = "insert into mydb.detalleventa (idproducto, detalleproducto, cantidad, preciou, descuento, preciot, fecha)select ('idproducto','detalleproducto','cantidad','preciou','descuento','preciot','fecha') from mydb.carrito";
             return adddetail;
         }
 
@@ -87,6 +87,18 @@ namespace PuntoDeVenta
         {
             string seecar = "select * from mydb.carrito"; 
             return seecar;
+        }
+
+        public string BuscarCarrito()
+        {
+            string seecar = "select * from mydb.carrito";
+            return seecar;
+        }
+
+        public string EliminarCarrito()
+        {
+            string delecar = "drop table if exists mydb.carritoS";
+            return delecar;
         }
     }
 }
