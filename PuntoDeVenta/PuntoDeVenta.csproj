@@ -34,10 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +55,24 @@
     </Compile>
     <Compile Include="AdminProv.Designer.cs">
       <DependentUpon>AdminProv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsulCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsulCompras.Designer.cs">
+      <DependentUpon>ConsulCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsulVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsulVentas.Designer.cs">
+      <DependentUpon>ConsulVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CorteCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CorteCaja.Designer.cs">
+      <DependentUpon>CorteCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoProducto.cs">
       <SubType>Form</SubType>
@@ -108,6 +123,15 @@
     <EmbeddedResource Include="AdminProv.resx">
       <DependentUpon>AdminProv.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsulCompras.resx">
+      <DependentUpon>ConsulCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsulVentas.resx">
+      <DependentUpon>ConsulVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CorteCaja.resx">
+      <DependentUpon>CorteCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoProducto.resx">
       <DependentUpon>NuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +181,35 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\bdcontrol.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

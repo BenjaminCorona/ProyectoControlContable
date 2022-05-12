@@ -56,5 +56,23 @@ namespace PuntoDeVenta
             ProdExistente pExis = new ProdExistente();
             pExis.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CorteCaja cCaja = new CorteCaja();
+            cCaja.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ConsulVentas cVentas = new ConsulVentas();
+            cVentas.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ConsulCompras cCompras = new ConsulCompras();
+            cCompras.Show();
+        }
     }
 }
