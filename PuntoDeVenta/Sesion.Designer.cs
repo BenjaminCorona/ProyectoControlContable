@@ -56,7 +56,7 @@ namespace PuntoDeVenta
             this.panel1.Controls.Add(this.BtnIniciar);
             this.panel1.Controls.Add(this.TxtUsuario);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(213, 198);
+            this.panel1.Location = new System.Drawing.Point(388, 97);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(546, 495);
@@ -125,7 +125,7 @@ namespace PuntoDeVenta
             // 
             // BtnIniciar
             // 
-            this.BtnIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(151)))), ((int)(((byte)(242)))));
+            this.BtnIniciar.BackColor = System.Drawing.Color.Goldenrod;
             this.BtnIniciar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnIniciar.FlatAppearance.BorderSize = 0;
             this.BtnIniciar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(151)))), ((int)(((byte)(242)))));
@@ -175,7 +175,7 @@ namespace PuntoDeVenta
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCerrar.ForeColor = System.Drawing.Color.Silver;
-            this.BtnCerrar.Location = new System.Drawing.Point(867, 2);
+            this.BtnCerrar.Location = new System.Drawing.Point(1200, -2);
             this.BtnCerrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(60, 62);
@@ -189,7 +189,7 @@ namespace PuntoDeVenta
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(928, 948);
+            this.ClientSize = new System.Drawing.Size(1258, 948);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;

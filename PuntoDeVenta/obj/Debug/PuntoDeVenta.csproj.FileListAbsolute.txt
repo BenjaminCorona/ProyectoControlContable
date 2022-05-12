@@ -147,3 +147,7 @@ C:\Users\marti\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\
 C:\Users\marti\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.CorteCaja.resources
 C:\Users\marti\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.ConsulVentas.resources
 C:\Users\marti\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.ConsulCompras.resources
+C:\Users\yahir\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.csproj.ResolveComReference.cache
+C:\Users\yahir\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.ConsulCompras.resources
+C:\Users\yahir\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.ConsulVentas.resources
+C:\Users\yahir\source\repos\BenjaminCorona\ProyectoControlContable\PuntoDeVenta\obj\Debug\PuntoDeVenta.CorteCaja.resources

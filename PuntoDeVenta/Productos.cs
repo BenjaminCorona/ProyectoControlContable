@@ -12,11 +12,14 @@ namespace PuntoDeVenta
         public int cantidad { get; set; } 
         public double preciou { get; set; }
         public double preciot { get; set; }
+        public double costou { get; set; }
+        public double costot { get; set; }
         public double descuento { get; set; }
         public string fecha { get; set; }
 
 
         public int idproducto { get; set; }
+        public int idproveeddor { get; set; }
         public string detalleproducto { get; set; }
         public double costo { get; set; }
         public double precioventa { get; set; }
@@ -48,12 +51,10 @@ namespace PuntoDeVenta
         {
             string editProd = "update mydb.producto set detalleproducto = '" + detalleproducto + "', costo = '" + costo + "', " +
                 "precioventa = '" + precioventa + "', preciomayoreo = '" + preciomayoreo + "', " +
-                "existencia = '" + existencia + "', exminima = '" + exminima + "', " +
+                "existencia = existencia +'" + cantidad+ "', exminima = '" + exminima + "', " +
                 "exmaxima = '" + exmaxima + "', tipoventa = '" + tipoventa + "' where idproducto='" + idproducto + "'";
             return editProd;
-            //UPDATE `mydb`.`producto` SET `detalleproducto` = 'Teniz', `costo` = '7', `precioventa` = '36', 
-            //`preciomayoreo` = '1', `existencia` = '11', 
-            //`exminima` = '9', `exmaxima` = '3', `tipoventa` = 'uni' WHERE(`idproducto` = '5');
+           
         }
 
         public string ActualizarExistenciaInventario()
@@ -78,7 +79,13 @@ namespace PuntoDeVenta
 
         public string AgregarDetalleVenta()
         {
-            string adddetail = "insert into mydb.detalleventa (idproducto, detalleproducto, cantidad, preciou, descuento, preciot, fecha)select ('idproducto','detalleproducto','cantidad','preciou','descuento','preciot','fecha') from mydb.carrito";
+            string adddetail = "insert ignore into mydb.detalleventa (idproducto, detalleproducto, cantidad, preciou, descuento, preciot, fecha)Values ('"+idproducto+"','"+detalleproducto+"','"+cantidad+"','"+preciou+"','"+descuento+"','"+preciot+"','"+fecha+"')";
+            return adddetail;
+        }
+
+        public string AgregarDetalleCompra()
+        {
+            string adddetail = "insert ignore into mydb.detallecompra (idproducto, idproveedor, detalleproducto, cantidad, costou, costot, fecha)Values ('"+idproducto+"','1','"+detalleproducto+"','"+cantidad+"','"+costou+"','"+costot+"','"+fecha+"')";
             return adddetail;
         }
 
@@ -97,7 +104,7 @@ namespace PuntoDeVenta
 
         public string EliminarCarrito()
         {
-            string delecar = "drop table if exists mydb.carritoS";
+            string delecar = "delete from mydb.carrito";
             return delecar;
         }
     }

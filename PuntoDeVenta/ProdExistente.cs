@@ -98,7 +98,6 @@ namespace PuntoDeVenta
                 txtCOSTO.Text = reader["costo"].ToString();
                 txtPRECIOU.Text = reader["precioventa"].ToString();
                 txtPRECIOM.Text = reader["preciomayoreo"].ToString();
-                txtEXISTENCIA.Text = reader["existencia"].ToString();
                 txtEXMI.Text = reader["exminima"].ToString();
                 txtEXMA.Text = reader["exmaxima"].ToString();
                 if (reader["tipoventa"].ToString() == "unitario")
@@ -121,12 +120,15 @@ namespace PuntoDeVenta
         {
             prod.idproducto = Convert.ToInt32(txtID.Text);
             prod.detalleproducto = txtDETALLE.Text;
-            prod.costo = Convert.ToDouble(txtCOSTO.Text);
+            prod.costou = Convert.ToDouble(txtCOSTO.Text);
             prod.precioventa = Convert.ToDouble(txtPRECIOU.Text);
             prod.preciomayoreo = Convert.ToDouble(txtPRECIOM.Text);
-            prod.existencia = Convert.ToInt32(txtEXISTENCIA.Text);
+            prod.cantidad = Convert.ToInt32(txtEXISTENCIA.Text);
             prod.exmaxima = Convert.ToInt32(txtEXMA.Text);
             prod.exminima = Convert.ToInt32(txtEXMI.Text);
+            prod.fecha = txtFECHA.Text;
+            prod.costot = prod.existencia * prod.costou;
+
             if (radioButton1.Checked == true)
             {
                 prod.tipoventa = radioButton1.Text.ToLower();
@@ -142,7 +144,14 @@ namespace PuntoDeVenta
                 MySqlCommand cmd2 = new MySqlCommand(prod.EditarProducto(), op.conectar());
                 MySqlDataReader reader2 = cmd2.ExecuteReader();
                 MessageBox.Show("¡Editaste el producto!", "X", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 reader2.Close();
+
+                MySqlCommand cmd6 = new MySqlCommand(prod.AgregarDetalleCompra(), op.conectar());
+                MySqlDataReader readerx = cmd6.ExecuteReader();
+                readerx.Read();
+                readerx.Close();
+
                 DesabilitarBotones();
             }
             else

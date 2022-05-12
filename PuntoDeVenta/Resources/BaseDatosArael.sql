@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `mydb` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `mydb`;
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: mydb
@@ -23,11 +25,12 @@ DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin` (
-  `idadmin` int NOT NULL,
+  `idadmin` int NOT NULL DEFAULT '1',
   `nombre` varchar(45) NOT NULL,
   `password` varchar(8) NOT NULL,
   `correo` varchar(45) NOT NULL,
-  PRIMARY KEY (`idadmin`)
+  KEY `fk_admin_detalleventa1_idx` (`idadmin`),
+  CONSTRAINT `fk_admin_detalleventa1` FOREIGN KEY (`idadmin`) REFERENCES `detalleventa` (`idproducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -37,8 +40,35 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'enrique','1234','correo'),(2,'yahir','9876','correo2'),(3,'juan','abcd','correo3'),(4,'carlos','wasd','wasd'),(5,'ramiel','552233','correo'),(6,'martin','rst','martinchave');
+INSERT INTO `admin` VALUES (1,'enrique','1234','correo'),(2,'yahir','9876','correo2');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `carrito`
+--
+
+DROP TABLE IF EXISTS `carrito`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `carrito` (
+  `idproducto` int NOT NULL,
+  `detalleproducto` varchar(450) NOT NULL,
+  `cantidad` int NOT NULL,
+  `preciou` double NOT NULL,
+  `descuento` double NOT NULL,
+  `preciot` double NOT NULL,
+  `fecha` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carrito`
+--
+
+LOCK TABLES `carrito` WRITE;
+/*!40000 ALTER TABLE `carrito` DISABLE KEYS */;
+/*!40000 ALTER TABLE `carrito` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -49,18 +79,17 @@ DROP TABLE IF EXISTS `detallecompra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `detallecompra` (
-  `idadmin` int NOT NULL,
+  `idadmin` int NOT NULL DEFAULT '1',
   `idproducto` int NOT NULL,
   `idproveedor` int NOT NULL,
-  `detalleproducto` varchar(45) NOT NULL,
+  `detalleproducto` varchar(450) NOT NULL,
   `cantidad` int NOT NULL,
   `costou` double NOT NULL,
-  `descuento` double NOT NULL,
   `costot` double NOT NULL,
   `fecha` varchar(45) NOT NULL,
-  PRIMARY KEY (`idadmin`,`idproducto`,`idproveedor`),
   KEY `fk_detallecompra_producto1_idx` (`idproducto`),
   KEY `fk_detallecompra_proveedor1_idx` (`idproveedor`),
+  KEY `fk_detallecompra_admin1` (`idadmin`),
   CONSTRAINT `fk_detallecompra_admin1` FOREIGN KEY (`idadmin`) REFERENCES `admin` (`idadmin`),
   CONSTRAINT `fk_detallecompra_producto1` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`),
   CONSTRAINT `fk_detallecompra_proveedor1` FOREIGN KEY (`idproveedor`) REFERENCES `proveedor` (`idproveedor`)
@@ -73,7 +102,7 @@ CREATE TABLE `detallecompra` (
 
 LOCK TABLES `detallecompra` WRITE;
 /*!40000 ALTER TABLE `detallecompra` DISABLE KEYS */;
-INSERT INTO `detallecompra` VALUES (1,1,1,'Camisa Nike Hombre',10,200,0,2000,'23-04-2022');
+INSERT INTO `detallecompra` VALUES (1,1,1,'Camisa Nike Hombre',10,200,2000,'23-04-2022'),(1,2,1,'Gorra Gap Mujer',120,250,30000,'10-05-2022');
 /*!40000 ALTER TABLE `detallecompra` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,17 +114,14 @@ DROP TABLE IF EXISTS `detalleventa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `detalleventa` (
-  `idadmin` int NOT NULL,
   `idproducto` int NOT NULL,
-  `detalleproducto` varchar(45) NOT NULL,
+  `detalleproducto` varchar(450) NOT NULL,
   `cantidad` int NOT NULL,
   `preciou` double NOT NULL,
   `descuento` double NOT NULL,
   `preciot` double NOT NULL,
   `fecha` varchar(45) NOT NULL,
-  PRIMARY KEY (`idadmin`,`idproducto`),
   KEY `fk_detalleventa_producto1_idx` (`idproducto`),
-  CONSTRAINT `fk_detalleventa_admin1` FOREIGN KEY (`idadmin`) REFERENCES `admin` (`idadmin`),
   CONSTRAINT `fk_detalleventa_producto1` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -106,7 +132,7 @@ CREATE TABLE `detalleventa` (
 
 LOCK TABLES `detalleventa` WRITE;
 /*!40000 ALTER TABLE `detalleventa` DISABLE KEYS */;
-INSERT INTO `detalleventa` VALUES (1,1,'Camisa Nike Hombre',1,320,0,320,'23-04-2022');
+INSERT INTO `detalleventa` VALUES (1,'Camisa Nike Hombre',1,320,0,320,'23-04-2022');
 /*!40000 ALTER TABLE `detalleventa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +170,7 @@ DROP TABLE IF EXISTS `producto`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `producto` (
   `idproducto` int NOT NULL,
-  `detalleproducto` varchar(45) NOT NULL,
+  `detalleproducto` varchar(450) NOT NULL,
   `costo` double NOT NULL,
   `precioventa` double NOT NULL,
   `preciomayoreo` double NOT NULL,
@@ -162,7 +188,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES (1,'Camisa Nike Hombre',200,320,0,40,10,50,'unitario'),(2,'Camiseta Adidas Blanca Hombre',140.4,230.99,0,40,5,100,'unitario'),(3,'Calcetines Reebok Mujer',30,70,0,190,5,200,'unitario'),(4,'Barra Z para pesas',300,500,0,40,5,30,'unitario');
+INSERT INTO `producto` VALUES (1,'Camisa Nike Hombre',200,320,0,40,10,50,'unitario'),(2,'Gorra Gap Mujer',0,300,0,120,1,200,'unitario');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,4 +225,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-01 10:26:46
+-- Dump completed on 2022-05-12 17:32:10

@@ -18,15 +18,12 @@ namespace PuntoDeVenta
         static string psswd = "1234";
         string conn = "server=" + server + "; port=" + puerto + "; user id=" + usuario + "; password=" + psswd + "; database=mydb;";
 
-        
-
 
         public MySqlConnection conectar()
         {
             try {
                 connection.ConnectionString = conn;
                 connection.Open();
-                MessageBox.Show("Conectado base de datos");
             } catch (MySqlException ex) {
                 //MessageBox.Show(ex.ToString());
             }

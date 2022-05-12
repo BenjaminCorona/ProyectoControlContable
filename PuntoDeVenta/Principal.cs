@@ -74,5 +74,10 @@ namespace PuntoDeVenta
             ConsulCompras cCompras = new ConsulCompras();
             cCompras.Show();
         }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
