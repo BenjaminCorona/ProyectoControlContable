@@ -306,7 +306,8 @@ namespace PuntoDeVenta
 
                 MySqlCommand cmd2 = new MySqlCommand(p.EliminarCarrito(), op.conectar());
                 MySqlDataReader reader2 = cmd2.ExecuteReader();
-
+            dataGrid2.DataSource = null;
+            dataGrid2.ClearSelection();
             reader2.Read();
                 
                     //MessageBox.Show("Carrito eliminado");
